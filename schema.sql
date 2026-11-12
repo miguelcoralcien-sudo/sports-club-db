@@ -5,7 +5,8 @@ CREATE TABLE visits (id INTEGER PRIMARY KEY, member_id INTEGER, visit_date TEXT 
 CREATE TABLE payments (id INTEGER PRIMARY KEY, member_id INTEGER, amount REAL NOT NULL, sub_type TEXT, payment_date TEXT, FOREIGN KEY (member_id) REFERENCES members(id));
 CREATE INDEX idx_visits_member ON visits(member_id);
 CREATE INDEX idx_classes_trainer ON classes(trainer_id);
-ALTER TABLE visits ADD COLUMN class_id INTEGER REFERENCES classes(id
+ALTER TABLE visits ADD COLUMN class_id INTEGER REFERENCES classes(id);
+
 -- Таблица расписания занятий
 CREATE TABLE schedule (
     id INTEGER PRIMARY KEY,
